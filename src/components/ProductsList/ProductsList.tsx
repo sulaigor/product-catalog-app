@@ -1,4 +1,5 @@
 import { useProductsContext } from 'contexts/ProductsContext';
+import Empty from 'components/Empty';
 import LoadingSpinner from 'components/LoadingSpinner';
 
 const ProductsList = () => {
@@ -9,7 +10,7 @@ const ProductsList = () => {
   }
 
   if (!products) {
-    return <div>no products</div>;
+    return <Empty>No products found...</Empty>;
   }
 
   return (
