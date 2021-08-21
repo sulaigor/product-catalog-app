@@ -7,7 +7,7 @@ import css from './productsList.module.scss';
 const ProductsList = () => {
   const { products, loading } = useProductsContext();
 
-  if (loading) {
+  if (loading && !products) {
     return <LoadingSpinner>Loading products...</LoadingSpinner>;
   }
 
