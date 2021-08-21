@@ -1,7 +1,13 @@
+import { getProductsCount } from 'data/products';
 import { createContext, useContext, useEffect, useReducer } from 'react';
 import { IChildrenProps as IProps } from 'types/props';
 import productsReducer, { initialState } from './productsReducer';
-import { setLoadingAction, setProductsAction, unsetLoadingAction } from './productsReducer/actions';
+import {
+  setLoadingAction,
+  setProductsAction,
+  setTotalCountAction,
+  unsetLoadingAction,
+} from './productsReducer/actions';
 import { ProductsContextType } from './types';
 import { getInitialProducts } from './utils';
 
@@ -22,9 +28,14 @@ const ProductsContext = ({ children }: IProps) => {
   const loadInitialProducts = async () => {
     setLoading();
     const products = await getInitialProducts();
+    const productsCount = await getProductsCount();
 
     if (products.length > 0) {
       dispatch(setProductsAction(products));
+    }
+
+    if (productsCount > 0) {
+      dispatch(setTotalCountAction(productsCount));
     }
 
     unsetLoading();
