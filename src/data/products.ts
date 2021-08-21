@@ -3,7 +3,8 @@ import { getRandomInteger } from 'utils/random';
 
 // Products data singleton
 let products: IProduct[] | null = null;
-const API_TIMEOUT = 2000;
+const PRODUCTS_TIMEOUT = 2000;
+const COUNT_TIMEOUT = 200;
 
 const generateProducts = () => {
   const productsCount = getRandomInteger(100, 90);
@@ -25,6 +26,14 @@ export const getProductsData = (): Promise<IProduct[]> => {
     setTimeout(() => {
       if (products) resolve(products);
       else reject(new Error('Products not exists!'));
-    }, API_TIMEOUT)
+    }, PRODUCTS_TIMEOUT)
   );
 };
+
+export const getProductsCount = (): Promise<number> =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (products) resolve(products.length);
+      else reject(new Error('Products not loaded!'));
+    }, COUNT_TIMEOUT);
+  });
