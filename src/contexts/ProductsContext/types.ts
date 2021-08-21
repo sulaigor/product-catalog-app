@@ -1,3 +1,7 @@
 import { IReducerState } from './productsReducer';
 
-export type ProductsContextType = IReducerState;
+interface IProductsContextActions {
+  loadNewProducts: () => void;
+}
+
+export type ProductsContextType = IReducerState & IProductsContextActions;
