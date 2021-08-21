@@ -1,0 +1,2 @@
+export const INITIAL_ITEMS_COUNT = 20;
+export const PAGINATION_ITEMS_COUNT = 10;
