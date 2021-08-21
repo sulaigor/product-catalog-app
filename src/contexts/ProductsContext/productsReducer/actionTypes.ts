@@ -3,3 +3,5 @@ export const LOAD_PRODUCTS = 'LOAD_PRODUCTS';
 
 export const SET_LOADING = 'SET_LOADING';
 export const UNSET_LOADING = 'UNSET_LOADING';
+
+export const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT';
