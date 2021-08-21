@@ -1,0 +1,10 @@
+@import 'assets/styles/const/colors';
+
+.divider {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: $darkBlueColor;
+  margin: 0 0.25em;
+  text-indent: -9999px;
+}
