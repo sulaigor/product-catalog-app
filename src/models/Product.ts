@@ -1,4 +1,5 @@
 import faker from 'faker';
+import { v4 as uuid } from 'uuid';
 import { getCapitalizedWord } from 'utils/capitalize';
 import { getRandomInteger } from 'utils/random';
 import { IProductParameter, ProductParameter } from 'models/ProductParameter';
@@ -6,6 +7,7 @@ import { IProductParameter, ProductParameter } from 'models/ProductParameter';
 type VehicleParamsType = keyof typeof faker.vehicle;
 
 export interface IProduct {
+  id: string;
   name: string;
   description: string;
   image: string;
@@ -14,13 +16,15 @@ export interface IProduct {
 }
 
 export class Product implements IProduct {
-  name: string;
-  description: string;
-  image: string;
-  parameters: IProductParameter[];
-  ratings: number;
+  readonly id: string;
+  readonly name: string;
+  readonly description: string;
+  readonly image: string;
+  readonly parameters: IProductParameter[];
+  readonly ratings: number;
 
   constructor() {
+    this.id = uuid();
     this.name = faker.vehicle.vehicle();
     this.description = faker.lorem.paragraph();
     this.image = faker.image.technics(1000, 750);
