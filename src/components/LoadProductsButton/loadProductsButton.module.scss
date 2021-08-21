@@ -1,0 +1,17 @@
+@import 'assets/styles/mixins/mediaQueries';
+@import 'assets/styles/mixins/utils';
+
+.wrapper {
+  @include centerContent;
+  padding: 1em 0.5em 0.5em;
+}
+
+@include mediaScreenMd {
+  .wrapper {
+    .btn {
+      font-size: 1.5em;
+      padding-left: 5em;
+      padding-right: 5em;
+    }
+  }
+}
