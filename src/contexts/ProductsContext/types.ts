@@ -1,2 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/ban-types
-export type ProductsContextType = {};
+import { IReducerState } from './productsReducer';
+
+export type ProductsContextType = IReducerState;
