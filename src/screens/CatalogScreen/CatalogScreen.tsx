@@ -1,5 +1,7 @@
+import ProductsList from 'components/ProductsList';
+
 const CatalogScreen = () => {
-  return <div>CatalogScreen</div>;
+  return <ProductsList />;
 };
 
 export default CatalogScreen;
