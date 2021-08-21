@@ -1,5 +1,7 @@
+import MainRouter from 'core/MainRouter';
+
 const App = () => {
-  return <div>Product catalog app</div>;
+  return <MainRouter />;
 };
 
 export default App;
