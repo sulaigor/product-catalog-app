@@ -1,0 +1,31 @@
+@import 'assets/styles/const/breakpoints';
+
+@mixin mediaSreenByWidth($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin mediaScreenXs {
+  @include mediaSreenByWidth($screenXs) {
+    @content;
+  }
+}
+
+@mixin mediaScreenSm {
+  @include mediaSreenByWidth($screenSm) {
+    @content;
+  }
+}
+
+@mixin mediaScreenMd {
+  @include mediaSreenByWidth($screenMd) {
+    @content;
+  }
+}
+
+@mixin mediaScreenLg {
+  @include mediaSreenByWidth($screenLg) {
+    @content;
+  }
+}
