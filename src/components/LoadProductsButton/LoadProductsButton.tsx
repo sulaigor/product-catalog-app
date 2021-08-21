@@ -1,16 +1,22 @@
 import Button from 'components/Button';
+import { useProductsContext } from 'contexts/ProductsContext';
 import css from './loadProductsButton.module.scss';
 
 const LoadProductsButton = () => {
-  const handleLoadMore = () => {};
+  const { products, totalCount, loading, loadNewProducts } = useProductsContext();
+  const currentProductsCount = products ? products.length : 0;
 
-  return (
-    <div className={css.wrapper}>
-      <Button className={css.btn} onClick={handleLoadMore}>
-        Load more...
-      </Button>
-    </div>
-  );
+  if (totalCount > 0 && currentProductsCount < totalCount) {
+    return (
+      <div className={css.wrapper}>
+        <Button className={css.btn} loading={loading} onClick={loadNewProducts}>
+          Load more...
+        </Button>
+      </div>
+    );
+  }
+
+  return null;
 };
 
 export default LoadProductsButton;
