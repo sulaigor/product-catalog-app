@@ -1,6 +1,8 @@
 import { useProductsContext } from 'contexts/ProductsContext';
 import Empty from 'components/Empty';
 import LoadingSpinner from 'components/LoadingSpinner';
+import ProductItem from './ProductItem';
+import css from './productsList.module.scss';
 
 const ProductsList = () => {
   const { products, loading } = useProductsContext();
@@ -14,9 +16,11 @@ const ProductsList = () => {
   }
 
   return (
-    <ul>
+    <ul className={css.list}>
       {products.map((product) => (
-        <li key={product.id}>{product.name}</li>
+        <li key={product.id} className={css.itemWrapper}>
+          <ProductItem product={product} />
+        </li>
       ))}
     </ul>
   );

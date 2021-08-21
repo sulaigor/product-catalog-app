@@ -1,0 +1,32 @@
+@import 'assets/styles/mixins/mediaQueries';
+
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 -0.5em;
+}
+
+.itemWrapper {
+  display: block;
+  width: 100%;
+  padding: 0 0.5em 0.5em;
+}
+
+@include mediaScreenXs {
+  .itemWrapper {
+    width: calc(100% / 2);
+  }
+}
+
+@include mediaScreenMd {
+  .itemWrapper {
+    width: calc(100% / 3);
+  }
+}
+
+@include mediaScreenLg {
+  .itemWrapper {
+    width: calc(100% / 4);
+  }
+}
