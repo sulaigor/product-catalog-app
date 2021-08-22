@@ -1,8 +1,15 @@
 @import 'assets/styles/const/colors';
+@import 'assets/styles/mixins/mediaQueries';
 
 .title {
-  font-size: 1.5em;
+  font-size: 1em;
   margin: 0;
   padding: 0 0 0.25em;
   color: $darkBlueColor;
+}
+
+@include mediaScreenSm {
+  .title {
+    font-size: 1.5em;
+  }
 }
