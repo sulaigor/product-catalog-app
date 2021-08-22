@@ -27,7 +27,7 @@ export class Product implements IProduct {
     this.id = uuid();
     this.name = faker.vehicle.vehicle();
     this.description = faker.lorem.paragraph();
-    this.image = faker.image.technics(1000, 750);
+    this.image = faker.image.image();
     this.ratings = getRandomInteger(100);
     this.parameters = [];
 
