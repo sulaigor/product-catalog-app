@@ -1,0 +1,18 @@
+@import 'assets/styles/const/colors';
+@import 'assets/styles/mixins/mediaQueries';
+@import 'assets/styles/mixins/utils';
+
+.shops {
+  margin-top: 1em;
+  padding: 1em 0.5em;
+  border: 2px solid $darkBlueColor;
+  border-radius: 0.5em;
+}
+
+.shopWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1em;
+  padding: 0 1.5em 0 0.5em;
+}

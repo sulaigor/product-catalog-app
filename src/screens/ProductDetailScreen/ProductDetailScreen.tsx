@@ -8,6 +8,7 @@ import NotFoundRedirect from 'components/NotFoundRedirect';
 import ProductDetail from './ProductDetail';
 import { IProductDetailParams } from './types';
 import css from './productDetailScreen.module.scss';
+import Shops from './Shops';
 
 const ProductDetailScreen = () => {
   const { productId } = useParams<IProductDetailParams>();
@@ -24,12 +25,15 @@ const ProductDetailScreen = () => {
     return <NotFoundRedirect />;
   }
 
+  const { name } = product;
+
   return (
     <Screen>
       <div className={css.linkWrapper}>
         <Link to={DEFAULT_PATH}>↩ Go back</Link>
       </div>
       <ProductDetail product={product} />
+      <Shops productName={name} />
     </Screen>
   );
 };
