@@ -1,8 +1,15 @@
 @import 'assets/styles/const/colors';
+@import 'assets/styles/mixins/mediaQueries';
 
 .paragraph {
-  font-size: 1em;
+  font-size: 0.7em;
   margin: 0;
   padding: 0 0 0.5em;
   color: $darkBlueColor;
+}
+
+@include mediaScreenSm {
+  .paragraph {
+    font-size: 1em;
+  }
 }
