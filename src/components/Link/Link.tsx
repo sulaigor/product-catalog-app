@@ -7,10 +7,13 @@ interface IProps extends IStringChildrenProps {
 }
 
 const Link = ({ children, to }: IProps) => {
-  return (
-    <RRDLink className={css.link} to={to}>
-      {children}
-    </RRDLink>
+  const isExternalLink = to.includes('http');
+  const commonProps = { children, className: css.link };
+
+  return isExternalLink ? (
+    <a {...commonProps} href={to} target='_blank' rel='noreferrer' />
+  ) : (
+    <RRDLink {...commonProps} to={to} />
   );
 };
 
