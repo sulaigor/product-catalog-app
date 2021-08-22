@@ -1,0 +1,16 @@
+@import 'assets/styles/const/colors';
+@import 'assets/styles/mixins/utils';
+
+.footer {
+  @include centerContent;
+  font-size: 0.8em;
+  margin-top: 2em;
+  padding: 1.75em 0 1.25em;
+  background: $darkBlueColor;
+
+  .text {
+    padding: 0;
+    color: $softGrayColor;
+    letter-spacing: 0.025em;
+  }
+}
