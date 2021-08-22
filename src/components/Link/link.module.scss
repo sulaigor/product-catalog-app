@@ -1,0 +1,8 @@
+@import 'assets/styles/const/colors';
+
+.link {
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid $darkBlueColor;
+  color: $darkBlueColor;
+  cursor: pointer;
+}
