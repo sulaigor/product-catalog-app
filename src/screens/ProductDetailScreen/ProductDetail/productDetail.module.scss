@@ -1,0 +1,51 @@
+@import 'assets/styles/const/colors';
+@import 'assets/styles/mixins/mediaQueries';
+@import 'assets/styles/mixins/utils';
+
+.productHeader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.5em;
+}
+
+.imageWrapper {
+  @include centerContent;
+  background: rgba($darkBlueColor, 0.85);
+}
+
+.params {
+  padding-top: 1em;
+}
+
+@include mediaScreenMd {
+  .productHeader {
+    margin: 0 -0.5em;
+  }
+
+  .titleWrapper {
+    font-size: 1.5em;
+  }
+
+  .column {
+    width: 50%;
+    margin: 0;
+    padding: 0 0.5em;
+  }
+
+  .params {
+    font-size: 1.2em;
+  }
+}

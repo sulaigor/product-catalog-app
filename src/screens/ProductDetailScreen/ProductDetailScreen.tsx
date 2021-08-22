@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useProductsContext } from 'contexts/ProductsContext';
 import Screen from 'components/Screen';
 import NotFoundRedirect from 'components/NotFoundRedirect';
+import ProductDetail from './ProductDetail';
 import { IProductDetailParams } from './types';
 
 const ProductDetailScreen = () => {
@@ -20,9 +21,11 @@ const ProductDetailScreen = () => {
     return <NotFoundRedirect />;
   }
 
-  const { name } = product;
-
-  return <Screen>{name}</Screen>;
+  return (
+    <Screen>
+      <ProductDetail product={product} />
+    </Screen>
+  );
 };
 
 export default ProductDetailScreen;
