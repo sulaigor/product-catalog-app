@@ -1,0 +1,40 @@
+@import 'assets/styles/const/colors';
+@import 'assets/styles/mixins/utils';
+
+.productItem {
+  position: relative;
+  min-height: 15em;
+  height: 100%;
+  padding: 0.5em 1em;
+  border: 2px solid $darkBlueColor;
+  border-radius: 0.4em;
+  cursor: pointer;
+  overflow: hidden;
+
+  @include transition;
+
+  &:hover,
+  &:focus {
+    border-color: lighten($darkBlueColor, 50%);
+  }
+
+  .text {
+    display: -webkit-box;
+    max-height: 2.3em;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.imageWrapper {
+  margin: -0.5em -1em 0;
+  padding-bottom: 1em;
+}
+
+.ratingsWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5em;
+}
