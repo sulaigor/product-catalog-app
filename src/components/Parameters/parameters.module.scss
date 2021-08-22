@@ -1,0 +1,11 @@
+.paramHeader {
+  font-size: 1.2em;
+  padding-bottom: 0.5em;
+}
+
+.paramItem {
+  font-size: 0.9em;
+  & + & {
+    padding-top: 0.25em;
+  }
+}
